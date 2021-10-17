@@ -26,7 +26,6 @@ public class UserController {
 
     public User findByName(String login) {
         return userRepository.findById(login).get();
-
     }
 
     public void deleteAll() {

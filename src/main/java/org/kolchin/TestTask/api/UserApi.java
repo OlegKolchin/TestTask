@@ -20,7 +20,6 @@ public class UserApi {
         return this.userController.findAll();
     }
 
-
     @GetMapping("/{login}")
     public User findByName(@PathVariable String login) {
         return userController.findByName(login);
@@ -42,8 +41,13 @@ public class UserApi {
     }
 
     @DeleteMapping("/{login}")
-    public void deleteByID(@PathVariable String login) {
-        this.userController.deleteById(login);
+    public ResponseMessage deleteByID(@PathVariable String login) {
+        try {
+            this.userController.deleteById(login);
+            return new ResponseMessage(true);
+        } catch (Exception e) {
+            return new ResponseMessage(false, e.toString());
+        }
     }
 
     @PutMapping("/{login}")
