@@ -10,7 +10,6 @@ import javax.validation.Validator;
 import java.util.Set;
 import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
 
 @SpringBootTest
 class TestTaskApplicationTests {
